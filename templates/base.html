@@ -26,12 +26,14 @@
 </head>
 <body style="background-color:#ADD8E6">
 <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
+    <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Chirp</a>
+            <a class="navbar-brand" href="{% url 'index' %}">
+
+            <a  class="navbar-brand" href="{% url 'index' %}">Chirp</a>
         </div>
         {% if messages %}
-        <div class="alert alert-success" role="alert">
+        <div style="margin-bottom:1px"class="alert alert-success" role="alert">
             <ul class="messages">
                 {% for message in messages %}
                 <li
@@ -40,13 +42,17 @@
             </ul>
         </div>
         {% endif %}
-        <div class="pull-right">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             {% if request.user.is_authenticated %}
-            {{ request.user }}
-            <a href="{% url 'logout' %}">Logout</a>
+            <ul class="nav navbar-nav navbar-right" style="margin-right: 0px">
+                <li style="margin-top: 15px; margin-right: 10px;"><a href="{% url 'my-profile' %}" style="padding: 0px">{{ request.user }}</a></li>
+                <li><button type="button" onClick="location.href='{% url 'logout' %}'" class="btn btn-default navbar-btn">Logout</button></li>
+            </ul>
             {% else %}
-            <a href="{% url 'login' %}">Login</a>
-            <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
+            <ul class="nav navbar-nav navbar-right" style="margin-right: 0px">
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><button type="button" onClick="location.href='{% url 'register' %}'" class="btn btn-default navbar-btn">Sign in</button></li>
+            </ul>
             {% endif %}
         </div>
     </div>
