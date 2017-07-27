@@ -12,10 +12,11 @@
             });
             request.done(function(){
                 alert("SUCCESS");
-
+                location.reload();
             });
             request.fail(function(){
                 alert("FAILLLL");
+                location.reload();
             });
         });
          $('.dislike-message').click(function(){
@@ -29,10 +30,11 @@
             });
             request.done(function(){
                 alert("SUCCESS");
-                
+                location.reload();
             });
             request.fail(function(){
                 alert("FAILLLL");
+                location.reload();
             });
         });
     });
