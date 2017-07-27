@@ -48,9 +48,32 @@
 
         {% endfor %}
         </div>
-            <div class="tab-pane" id="following-tab"></div>
+            <div class="tab-pane" id="following-tab">
+                Following
+                {% for user in following %}
+                <div class="row chirp">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <p> You are following  <a href="{% url 'profile' user.username %}">{{ user }}</a>.</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="tab-pane" id="followers-tab">
+                 Followers
+                 {% for user in followers %}
+                 <div class="row chirp">
+                     <div class="panel panel-default">
+                         <div class="panel-body"><p> You are followed by <a href="{% url 'profile' user.username %}">{{ user }}</a>.</p>
+                         </div>
+                     </div>
+                 </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 
 </div>
+
 {% endblock %}
