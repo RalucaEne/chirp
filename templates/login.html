@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="center">
+<form style="background-color:#DCDCDC"method="post" class="login-form">
+
+
+    <h2 style="padding:15px"class="login-header"> Login </h2>
+
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+
+    <p >
+
+            <input style="border-radius:3px;margin-left:140px;width:305px" type="text" name="username"  placeholder="Username" autofocus maxlength="254"   required id="id_username"/>
+
+        {{ form.username.errors }}
+    </p>
+    <p>
+
+        <input style="border-radius:3px;margin-left:140px;width:305px"type="password" name="password" placeholder="Password"  autocomplete="on" required id="id_password"/>
+        {{ form.password.errors }}
+    </p>
+
+        <button type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" >Login</button>
+
+</form>
+</div>
+
+    {% endblock %}

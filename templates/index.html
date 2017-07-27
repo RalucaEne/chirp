@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div style="margin-top:80px" class="row-container">
+    {% if request.user.is_authenticated %}
+    <form method="post" action="{% url 'chirp'%}">
+        {% csrf_token %}
+        <input type = "hidden", name="user", value="{{request.user.id}}"/>
+        <label style="margin-left:155px;padding:5px"for = "id_status"></label>
+        <input style="border-radius:3px;margin-left:31px;margin-bottom:20px"type="text" name="status" placeholder="Status",max-length="30px" id="id_status"
+            class="{% if form.status.errors %} error-field{% endif %}"/>
+        {{ form.status.errors }}
+        <button type="submit" class=" btn btn-primary follow" >Chirp </button>
+    </form>
+    {% endif %}
+    {% for message in object_list %}
+
+
+    <div class="row chirp">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p>
+                    {% if user == message.user %}
+                    <span class="label label-primary username">@{{ message.user.username }}</span>
+                    {% else %}
+                    <span class="label label-default username">@{{ message.user.username }}</span>
+                    {% endif %}
+                    <small>{{ message.created }}</small>
+                </p>
+                <p>{{ message }}</p>
+                <button class="like-message" data-messageid="{{ message.id }}"
+                        {% if request.user in message.like_users %} style="color:green"{%  endif %}>
+                    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                </button>
+                <button class="dislike-message" data-messageid="{{ message.id }}"
+                        {% if request.user in message.dislike_users %} style="color:red"{%  endif %}>
+                    <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+{% endblock %}

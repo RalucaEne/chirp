@@ -1,0 +1,111 @@
+.login-header {
+  color:#A9A9A9;
+  background-color:#f5f5f0;
+  max-width:620px;
+  padding:10px;
+  font-size: 1.3em;
+  border:1px solid #ccc;
+}
+
+
+.register-header {
+  color:#A9A9A9;
+  background-color:#f5f5f0;
+  max-width:650px;
+  padding:10px;
+  font-size: 1.3em;
+  font-weight: 70px;
+  text-align:left;
+  border:1px solid #ccc
+}
+
+
+.login-form{
+   margin-top:200px;
+   border:1px solid #ccc;
+   border-top:none;
+ }
+.register-form {
+    margin-top: 200px;
+    border:1px solid #ccc;
+    border-top:none;
+    width:600px;
+
+}
+
+.chirp {
+    .margin: 10px 0;
+}
+
+.username {
+    font-size: 16px;
+
+}
+
+.container [role=main]{
+   margin-top: 200px;
+}
+
+.error-field {
+    border-color: red;
+}
+
+
+
+label{
+
+    float:left;
+    clear:left;
+    width:220px;
+    text-align:center;
+ }
+
+input {
+   text-align:center;
+
+}
+
+.btn-login {
+    margin-bottom:10px;
+    background-color:#00b33c;
+    margin-left: 370px;
+    margin-top: 1px;
+    width: 75px;
+    height: 35px;
+    border-radius: 6px;
+    color: white;
+    font-size:16px;
+    font-weight:500px;
+
+}
+button:hover {
+    opacity: 0.9;
+}
+
+.center{
+    margin-left: 280px;
+    width: 50%;
+}
+.profile-icon {
+    padding: 20px;
+    border: 1px solid #383838;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+.follow {
+   padding-left:20px;
+   padding-right:20px;
+}
+.btn-register {
+    margin-bottom:10px;
+    background-color:#00b33c;
+    margin-left: 480px;
+    margin-top: 1px;
+
+    border-radius: 6px;
+    color: white;
+    font-size:14px;
+    font-weight:700px;
+
+}
