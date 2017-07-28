@@ -50,7 +50,7 @@
         </div>
             <div class="tab-pane" id="following-tab">
 
-                {% for user in following %}
+                {% for user in following1 %}
                 <div class="row chirp">
                     <div class="panel panel-default">
                         <div class="panel-body">
@@ -62,7 +62,7 @@
             </div>
             <div class="tab-pane" id="followers-tab">
 
-                 {% for user in followers %}
+                 {% for user in followers1 %}
                  <div class="row chirp">
                      <div class="panel panel-default">
                          <div class="panel-body"><p> You are followed by <a href="{% url 'profile' user.username %}">{{ user }}</a>.</p>
