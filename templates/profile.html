@@ -10,7 +10,7 @@
             {% if object in following %}
             <form method="post" action="{% url 'unfollow_user' object.username %}">
                 {% csrf_token %}
-                <button type="submit" class=" btn btn-primary unfollow" >Unfollow </button>
+                <button style="margin-top:8px"type="submit" class=" btn btn-primary unfollow" >Unfollow </button>
             </form>
 
             {% else %}
@@ -49,7 +49,7 @@
         {% endfor %}
         </div>
             <div class="tab-pane" id="following-tab">
-                Following
+
                 {% for user in following %}
                 <div class="row chirp">
                     <div class="panel panel-default">
@@ -61,7 +61,7 @@
                 {% endfor %}
             </div>
             <div class="tab-pane" id="followers-tab">
-                 Followers
+
                  {% for user in followers %}
                  <div class="row chirp">
                      <div class="panel panel-default">

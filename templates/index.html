@@ -7,10 +7,10 @@
         {% csrf_token %}
         <input type = "hidden", name="user", value="{{request.user.id}}"/>
         <label style="margin-left:155px;padding:5px"for = "id_status"></label>
-        <input style="border-radius:3px;margin-left:31px;margin-bottom:20px"type="text" name="status" placeholder="Status",max-length="30px" id="id_status"
+        <input style="border-radius:3px;margin-left:33px;margin-bottom:20px"type="text" name="status" placeholder="Status",max-length="30px" id="id_status"
             class="{% if form.status.errors %} error-field{% endif %}"/>
         {{ form.status.errors }}
-        <button type="submit" class=" btn btn-primary follow" >Chirp </button>
+        <button style="margin-left:10px"type="submit" class=" btn btn-primary follow" >Chirp </button>
     </form>
     {% endif %}
     {% for message in object_list %}
